@@ -31,7 +31,6 @@ class S3(object):
         config = TransferConfig(
             multipart_threshold=self.multipart_threshold,
             multipart_chunksize=self.multipart_chunk_size,
-            use_threads=False,
             num_download_attempts=retries)
 
         try:
@@ -48,7 +47,6 @@ class S3(object):
         config = TransferConfig(
             multipart_threshold=self.multipart_threshold,
             multipart_chunksize=self.multipart_chunk_size,
-            use_threads=False,
             num_download_attempts=retries)
         try:
             key.upload_fileobj(source, Config=config, ExtraArgs=extra)
